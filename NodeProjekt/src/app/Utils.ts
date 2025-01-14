@@ -15,7 +15,7 @@ export type stringInfo = {
 export function getStringInfo(arg: string): stringInfo {
     return {
         lowerCase: arg.toLowerCase(),
-        upperCase: arg.toLowerCase(),
+        upperCase: arg.toUpperCase(),
         characters: Array.from(arg),
         length: arg.length,
         extraInfo: {},

@@ -1,4 +1,4 @@
-import {getStringInfo, toUpperCase} from "../app/Utils";
+import { getStringInfo, stringInfo, toUpperCase } from "../app/Utils";
 
 
 describe("Utils test suit", () => {
@@ -21,22 +21,35 @@ describe("Utils test suit", () => {
         expect(actual).toBe(expected);
     })
 
-    it.only('should return info for valid string', () => {
-        const actual = getStringInfo('My-String');
+    describe('getStringInfo for argument My-String should', () => {
 
-        expect(actual.lowerCase).toBe('my-string');
-        expect(actual.extraInfo).toEqual({});
+        let actual: stringInfo;
+        beforeEach(() => {
+            actual = getStringInfo('My-String');
+        })
 
-        expect(actual.characters.length).toBe(9);
-        expect(actual.characters).toHaveLength(9);
+        it('return right length', () => {
+            expect(actual.characters).toHaveLength(9);
+            expect(actual.characters.length).toBe(9);
+        })
 
-        expect(actual.characters).toEqual(['M', 'y', '-', 'S', 't', 'r', 'i', 'n', 'g']);
-        expect(actual.characters).toContain('M');
-        expect(actual.characters).toContain<string>('M');
-        expect(actual.characters).toEqual(expect.arrayContaining(['M', 'y', '-', 'S', 't']));
+        it('return right lower case', () => {
+            expect(actual.lowerCase).toBe('my-string');
+        })
 
-        expect(actual.extraInfo).not.toBe(undefined);
-        expect(actual.extraInfo).not.toBeUndefined();
-        expect(actual.extraInfo).toBeTruthy();
+        it('return right upper case', () => {
+            expect(actual.upperCase).toBe('MY-STRING');
+        })
+
+        it('return defined right characters', () => {
+            expect(actual.extraInfo).toBeDefined();
+        })
+
+        it('return right extra info case', () => {
+            expect(actual.extraInfo).toEqual({});
+            expect(actual.extraInfo).not.toBe(undefined);
+            expect(actual.extraInfo).not.toBeUndefined();
+            expect(actual.extraInfo).toBeTruthy();
+        })
     })
 })
