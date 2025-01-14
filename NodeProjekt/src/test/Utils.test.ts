@@ -32,5 +32,11 @@ describe("Utils test suit", () => {
 
         expect(actual.characters).toEqual(['M', 'y', '-', 'S', 't', 'r', 'i', 'n', 'g']);
         expect(actual.characters).toContain('M');
+        expect(actual.characters).toContain<string>('M');
+        expect(actual.characters).toEqual(expect.arrayContaining(['M', 'y', '-', 'S', 't']));
+
+        expect(actual.extraInfo).not.toBe(undefined);
+        expect(actual.extraInfo).not.toBeUndefined();
+        expect(actual.extraInfo).toBeTruthy();
     })
 })
