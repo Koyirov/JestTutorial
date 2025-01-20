@@ -16,7 +16,7 @@ export function calculateComplexity(stringInfo: stringInfo): number {
 
 export function toUpperCaseWithCb(arg: string, callBack: LoggerServiceCallBack){
     if(!arg){
-        callBack('Invalid argument');
+        callBack('Invalid argument!');
         return;
     }
 
