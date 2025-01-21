@@ -1,4 +1,4 @@
-import {calculateComplexity, OtherStringUtils, toUpperCaseWithCb} from "../../app/doubles/OtherUtils";
+import { calculateComplexity, OtherStringUtils, toUpperCaseWithCb } from "../../app/doubles/OtherUtils";
 
 
 describe('OtherUtils  test suite', () => {
