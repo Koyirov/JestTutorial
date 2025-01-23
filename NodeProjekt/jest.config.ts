@@ -9,8 +9,8 @@
 // Manuel configuration
 import type { Config } from '@jest/types';
 
-const baseDir = '<rootDir>/src/app/utils';   //'<rootDir>/src/app/**/*.ts';
-const baseTestDir = '<rootDir>/src/test/utils';
+const baseDir = '<rootDir>/src/app/server';   //'<rootDir>/src/app/**/*.ts';
+const baseTestDir = '<rootDir>/src/test/server';
 
 const config: Config.InitialOptions = {
   preset: 'ts-jest',
